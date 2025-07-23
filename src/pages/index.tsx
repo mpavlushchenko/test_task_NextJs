@@ -1,3 +1,9 @@
-export default function Home() {
-  return <h1>Хто хоче стати мільйонером!</h1>;
+import styles from '@/styles/Home.module.css';
+
+export default function HomePage() {
+  return (
+    <div className={styles.container}>
+      <h1 className={styles.title}>Who wants to be a millionaire?</h1>
+    </div>
+  );
 }

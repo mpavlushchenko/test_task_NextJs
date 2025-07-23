@@ -2,7 +2,7 @@ import { defineFlatConfig } from 'eslint-define-config';
 
 export default defineFlatConfig([
   {
-    files: ['**/*.ts', '**/*.tsx'],
+    files: ['**/*.ts', '**/*.tsx', '**/*.css'],
     extends: [
       'next/core-web-vitals',
       'plugin:@typescript-eslint/recommended',
