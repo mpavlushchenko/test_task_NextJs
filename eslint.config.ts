@@ -1,39 +1,17 @@
-import { FlatCompat } from '@eslint/eslintrc';
-import path from 'path';
+import { defineFlatConfig } from 'eslint-define-config';
 
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-});
-
-export default [
-  ...compat.extends(
-    'airbnb',
-    'airbnb-typescript',
-    'airbnb/hooks',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:react/recommended',
-    'plugin:react-hooks/recommended',
-    'plugin:jsx-a11y/recommended',
-    'plugin:prettier/recommended',
-    'next/core-web-vitals',
-  ),
+export default defineFlatConfig([
   {
-    files: ['*.ts', '*.tsx'],
-    parserOptions: {
-      project: ['./tsconfig.json'],
-    },
+    files: ['**/*.ts', '**/*.tsx'],
+    extends: [
+      'next/core-web-vitals',
+      'plugin:@typescript-eslint/recommended',
+      'plugin:prettier/recommended',
+    ],
     rules: {
-      'prettier/prettier': 'error',
+      '@typescript-eslint/no-unused-vars': 'warn',
+      'react/jsx-uses-react': 'off',
       'react/react-in-jsx-scope': 'off',
-      'react/jsx-props-no-spreading': 'off',
-      'import/prefer-default-export': 'off',
-    },
-    settings: {
-      'import/resolver': {
-        typescript: {
-          project: path.resolve(__dirname, './tsconfig.json'),
-        },
-      },
     },
   },
-];
+]);
