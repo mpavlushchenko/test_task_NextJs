@@ -13,7 +13,7 @@ const StartScreen = () => {
   };
 
   return (
-    <section className={styles.container} aria-label="Start Screen">
+    <section className={styles.container}>
       <div className={styles.leftBlock}>
         <Image src="/hand.png" alt="Millionaire" fill priority />
       </div>
