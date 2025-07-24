@@ -1,7 +1,6 @@
 // import Image from 'next/image';
 import { useRouter } from 'next/router';
 
-// import handImage from '@/assets/hand.png';
 import { Button } from '@components/ui/Button';
 import styles from './StartScreen.module.css';
 
@@ -14,7 +13,10 @@ const StartScreen = () => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.leftBlock}>{/*<Image src={handImage} alt="Millionaire" fill priority />*/}</div>
+      <div className={styles.leftBlock}>
+        {/* TODO: Problem with importing the Image */}
+        {/*<Image src="/hand.png" alt="Millionaire" width={500} height={500} />*/}
+      </div>
       <div className={styles.rightBlock}>
         <h1 className={styles.title}>
           Who wants to be <br /> a millionaire?

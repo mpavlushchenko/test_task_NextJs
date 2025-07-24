@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "npx @biomejs/biome lint --write ."
@@ -16,11 +16,10 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.3",
-    "biome": "^0.3.3",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "sass": "^1.89.2",
+    "biome": "^0.2.2",
     "typescript": "^5"
   }
 }
