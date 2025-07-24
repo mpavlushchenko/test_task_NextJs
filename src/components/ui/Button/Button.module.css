@@ -12,10 +12,9 @@
 .primary {
   background-color: var(--color-orange-100);
   color: white;
-
-  &:hover {
-    background-color: var(--color-orange-80);
-  }
+}
+.primary:hover {
+  background-color: var(--color-orange-80);
 }
 
 .md {

@@ -1,8 +1,0 @@
-node_modules/
-.next/
-dist/
-out/
-.idea/
-*.config.js
-*.config.cjs
-coverage/
