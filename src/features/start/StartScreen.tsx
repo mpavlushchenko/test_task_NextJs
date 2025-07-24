@@ -1,14 +1,15 @@
-// import Image from 'next/image';
 import { useRouter } from 'next/router';
+// import Image from 'next/image';
 
 import { Button } from '@components/ui/Button';
 import styles from './StartScreen.module.css';
+import { ROUTES } from '@/constants';
 
 const StartScreen = () => {
   const router = useRouter();
 
   const handleStart = () => {
-    router.push('/GameScreen');
+    router.push(ROUTES.GAME);
   };
 
   return (
