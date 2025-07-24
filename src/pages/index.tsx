@@ -1,5 +1,5 @@
 import StartScreen from '@features/start/StartScreen';
 
-const Home = () => <StartScreen />;
+const StartPage = () => <StartScreen />;
 
-export default Home;
+export default StartPage;

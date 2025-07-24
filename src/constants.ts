@@ -1,5 +1,5 @@
 export const ROUTES = {
   START: '/',
-  GAME: '/GameScreen',
+  GAME: '/game',
   RESULT: '/result',
 };
