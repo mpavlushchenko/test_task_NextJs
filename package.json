@@ -6,36 +6,22 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx, css",
-    "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
-    "format": "prettier --write ."
+    "lint": "biome lint .",
+    "lint:fix": "biome lint . --apply",
+    "format": "biome format ."
   },
   "dependencies": {
     "clsx": "^2.1.1",
-    "eslint-config-airbnb-typescript": "^18.0.0",
     "next": "15.4.3",
     "react": "19.1.0",
     "react-dom": "19.1.0"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@typescript-eslint/eslint-plugin": "^8.38.0",
-    "@typescript-eslint/parser": "^8.38.0",
-    "eslint": "^8.0.0",
-    "eslint-config-next": "15.4.3",
-    "eslint-config-prettier": "^10.1.8",
-    "eslint-define-config": "^2.1.0",
-    "eslint-plugin-import": "^2.32.0",
-    "eslint-plugin-jsx-a11y": "^6.10.2",
-    "eslint-plugin-prettier": "^5.5.3",
-    "eslint-plugin-react": "^7.37.5",
-    "eslint-plugin-react-hooks": "^5.2.0",
-    "prettier": "^3.6.2",
+    "biome": "^0.3.3",
     "sass": "^1.89.2",
-    "typescript": "^5",
-    "typescript-eslint": "^8.38.0"
+    "typescript": "^5"
   }
 }
