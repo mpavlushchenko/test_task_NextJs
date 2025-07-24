@@ -13,19 +13,19 @@ const StartScreen = () => {
   };
 
   return (
-    <div className={styles.container}>
+    <section className={styles.container} aria-label="Start Screen">
       <div className={styles.leftBlock}>
-        <Image src="/hand.png" alt="Millionaire" fill />
+        <Image src="/hand.png" alt="Millionaire" fill priority />
       </div>
       <div className={styles.rightBlock}>
         <h1 className={styles.title}>
           Who wants to be <br /> a millionaire?
         </h1>
-        <Button type="button" onClick={handleStart}>
+        <Button type="button" onClick={handleStart} aria-label="Start the game">
           Start
         </Button>
       </div>
-    </div>
+    </section>
   );
 };
 
