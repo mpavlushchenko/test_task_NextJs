@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-// import Image from 'next/image';
+import Image from 'next/image';
 
 import { Button } from '@components/ui/Button';
 import { ROUTES } from '@/constants';
@@ -15,8 +15,7 @@ const StartScreen = () => {
   return (
     <div className={styles.container}>
       <div className={styles.leftBlock}>
-        {/* TODO: Problem with importing the Image */}
-        {/*<Image src="/hand.png" alt="Millionaire" width="500" height="500" />*/}
+        <Image src="/hand.png" alt="Millionaire" fill />
       </div>
       <div className={styles.rightBlock}>
         <h1 className={styles.title}>
