@@ -1,0 +1,29 @@
+.button {
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 12px;
+  transition: background 0.2s ease;
+  padding: 18px 24px;
+  font-size: 20px;
+  line-height: 1.4;
+}
+
+.primary {
+  background-color: var(--color-orange-100);
+  color: white;
+
+  &:hover {
+    background-color: var(--color-orange-80);
+  }
+}
+
+.md {
+  font-size: 20px;
+  min-width: 296px;
+}
+
+.lg {
+  font-size: 18px;
+  padding: 16px 32px;
+}

@@ -1,9 +1,5 @@
-import styles from '@/styles/Home.module.css';
+import StartScreen from '@features/start/StartScreen';
 
-export default function HomePage() {
-  return (
-    <div className={styles.container}>
-      <h1 className={styles.title}>Who wants to be a millionaire?</h1>
-    </div>
-  );
-}
+const Home = () => <StartScreen />;
+
+export default Home;

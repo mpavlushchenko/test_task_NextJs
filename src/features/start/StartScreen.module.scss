@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(330deg, var(--color-orange-5) 50%, white 50%);
+  height: 100vh;
+
+  .title {
+    margin-bottom: 4rem;
+  }
+
+  .leftBlock,
+  .rightBlock {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .leftBlock {
+    position: relative;
+  }
+
+  .rightBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+}

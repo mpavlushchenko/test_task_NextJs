@@ -1,6 +1,6 @@
+@import '@/styles/theme.css';
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
   --font-inter: 'Inter', sans-serif;
 }
 
@@ -12,8 +12,8 @@ body {
 
 body {
   font-family: var(--font-inter);
-  color: var(--foreground);
-  background: var(--background);
+  color: var(--color-black-100);
+  background: white;
   margin: 0;
 }
 
@@ -21,4 +21,24 @@ body {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-black-100);
+  margin: 0;
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 56px;
+}
+
+h2 {
+  font-size: 32px;
 }
