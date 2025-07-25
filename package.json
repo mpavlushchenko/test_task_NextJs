@@ -12,7 +12,7 @@
     "prepare": "husky install"
   },
   "lint-staged": {
-    "*.{js,ts,tsx}": "biome lint --write"
+    "*.{js,ts,tsx,css}": "biome lint --write"
   },
   "dependencies": {
     "clsx": "^2.1.1",

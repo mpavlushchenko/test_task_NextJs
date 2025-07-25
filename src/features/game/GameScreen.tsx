@@ -72,7 +72,6 @@ const GameScreen = ({ questions }: { questions: Question[] }) => {
 
   if (gameState.gameOver) {
     const earnedAmount = questions[gameState.questionIndex - 1]?.amount || '0';
-
     return <GameOver earnedAmount={earnedAmount} handleRestart={() => setGameState(initialGameState)} />;
   }
 
