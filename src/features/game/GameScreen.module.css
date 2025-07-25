@@ -1,0 +1,85 @@
+.container {
+  display: flex;
+  height: 100vh;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+  gap: 4rem;
+  padding: 4rem;
+  background: var(--color-black-5);
+}
+.question {
+  flex-shrink: 0;
+  height: 50%;
+}
+.question h2 {
+  font-size: 1.8rem;
+  margin: 0;
+}
+.answers {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  height: 50%;
+}
+.answerButton {
+  padding: 1rem;
+  font-size: 1rem;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  background-color: #f0f0f0;
+  transition: 0.3s;
+}
+.answerButton:hover {
+  cursor: pointer;
+  background-color: #ddd;
+}
+
+.correct {
+  background-color: #4caf50;
+  color: white;
+}
+
+.wrong {
+  background-color: #f44336;
+  color: white;
+}
+.sidebar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 376px;
+}
+.sidebar .winningsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.sidebar .winningsList .winningItem {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.winningsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+.winningItem {
+  padding: 0.5rem;
+  border-bottom: 1px solid #ccc;
+  text-align: right;
+}
+.active {
+  background-color: orange;
+  font-weight: bold;
+}
+.passed {
+  background: var(--color-black-5);
+  color: #555;
+}
