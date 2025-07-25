@@ -1,24 +1,29 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Project Overview
+This is a test task — an adaptive "Who Wants to Be a Millionaire?" game built with Next.js and TypeScript.  
+The game includes a JSON-based question set, answer selection logic, winnings calculation, result display, and a responsive UI without CSS frameworks.
 
-## Getting Started
+## Documentation
 
-First, run the development server:
-
+### How to Start the Project
+1. Clone the repository:
+```bash
+git clone https://github.com/mpavlushchenko/test_task_NextJs
+cd test_task_NextJs
+```
+2. Install dependencies:
+```bash
+npm install
+```
+3. Set up Git hooks (Husky):
+```bash
+npm run prepare
+```
+4. Run the project in development mode:
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Open [http://localhost:3000](http://localhost:3000) in the browser.
 
 ## Learn More
 

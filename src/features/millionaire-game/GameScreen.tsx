@@ -25,6 +25,7 @@ const GameScreen = ({ questions }: { questions: Question[] }) => {
   const [gameState, setGameState] = useState(initialGameState);
 
   const currentQuestion = questions.at(gameState.questionIndex);
+  const amountsReversed = questions.map((q) => ({ id: q.id, amount: q.amount })).reverse();
 
   const handleAnswerClick = async (answer: Answer) => {
     const { selectedAnswer, gameOver, questionIndex } = gameState;
@@ -65,8 +66,6 @@ const GameScreen = ({ questions }: { questions: Question[] }) => {
       console.error('Помилка під час обробки відповіді:', e);
     }
   };
-
-  const amountsReversed = questions.map((q) => ({ id: q.id, amount: q.amount })).reverse();
 
   if (gameState.gameOver) {
     const earnedAmount = questions[gameState.questionIndex - 1]?.amount || '0';
