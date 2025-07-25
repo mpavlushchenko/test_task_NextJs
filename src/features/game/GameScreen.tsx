@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import clsx from 'clsx';
 
-import { winnings } from '@data/winnings';
 import GameOver from '@features/finish/GameOver';
 import { Answer, Question } from '@features/game/types';
 
@@ -65,9 +64,16 @@ const GameScreen = ({ questions }: { questions: Question[] }) => {
     }
   };
 
+  const amountsReversed = questions
+    .map((q) => ({
+      id: q.id,
+      amount: q.amount,
+    }))
+    .reverse();
+
   if (gameState.gameOver) {
-    const indexFromTop = winnings.length - gameState.questionIndex;
-    const earnedAmount = winnings[indexFromTop]?.amount || '0';
+    const indexFromTop = amountsReversed.length - gameState.questionIndex;
+    const earnedAmount = amountsReversed[indexFromTop]?.amount || '0';
 
     return <GameOver earnedAmount={earnedAmount} handleRestart={() => setGameState(initialGameState)} />;
   }
@@ -82,6 +88,7 @@ const GameScreen = ({ questions }: { questions: Question[] }) => {
         <section className={styles.answers}>
           {currentQuestion.answers.map((answer) => {
             const isSelected = gameState.selectedAnswer?.text === answer.text;
+
             return (
               <button
                 key={answer.text}
@@ -103,20 +110,20 @@ const GameScreen = ({ questions }: { questions: Question[] }) => {
 
       <aside className={styles.sidebar}>
         <ul className={styles.winningsList}>
-          {winnings.map((item, i) => {
-            const indexFromTop = winnings.length - 1 - gameState.questionIndex;
-            const isActive = i === indexFromTop;
-            const isPassed = i > indexFromTop;
+          {amountsReversed.map((q) => {
+            const currentId = questions[gameState.questionIndex]?.id;
+            const isActive = q.id === currentId;
+            const isPassed = q.id < currentId;
 
             return (
               <li
-                key={item.id}
+                key={q.id}
                 className={clsx(styles.winningItem, {
                   [styles.active]: isActive,
                   [styles.passed]: isPassed,
                 })}
               >
-                ${item.amount}
+                ${q.amount}
               </li>
             );
           })}

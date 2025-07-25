@@ -6,5 +6,6 @@ export type Answer = {
 export type Question = {
   id: number;
   question: string;
+  amount: string;
   answers: Answer[];
 };

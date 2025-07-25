@@ -2,6 +2,7 @@
   {
     "id": 1,
     "question": "Яке місто є столицею України?",
+    "amount": "500",
     "answers": [
       { "text": "Львів", "correct": false },
       { "text": "Київ", "correct": true },
@@ -12,6 +13,7 @@
   {
     "id": 2,
     "question": "Яка річка є найдовшою в Україні?",
+    "amount": "1,000",
     "answers": [
       { "text": "Південний Буг", "correct": false },
       { "text": "Дністер", "correct": false },
@@ -22,6 +24,7 @@
   {
     "id": 3,
     "question": "Скільки континентів існує на Землі?",
+    "amount": "2,000",
     "answers": [
       { "text": "5", "correct": false },
       { "text": "6", "correct": false },
@@ -32,6 +35,7 @@
   {
     "id": 4,
     "question": "Хто написав 'Кобзар'?",
+    "amount": "4,000",
     "answers": [
       { "text": "Іван Франко", "correct": false },
       { "text": "Леся Українка", "correct": false },
@@ -42,6 +46,7 @@
   {
     "id": 5,
     "question": "Яка планета найбільша в Сонячній системі?",
+    "amount": "8,000",
     "answers": [
       { "text": "Земля", "correct": false },
       { "text": "Юпітер", "correct": true },
@@ -52,6 +57,7 @@
   {
     "id": 6,
     "question": "Скільки триває доба на Землі?",
+    "amount": "16,000",
     "answers": [
       { "text": "12 годин", "correct": false },
       { "text": "24 години", "correct": true },
@@ -62,6 +68,7 @@
   {
     "id": 7,
     "question": "Який хімічний елемент має символ 'O'?",
+    "amount": "32,000",
     "answers": [
       { "text": "Олово", "correct": false },
       { "text": "Кисень", "correct": true },
@@ -72,6 +79,7 @@
   {
     "id": 8,
     "question": "Хто написав музику до гімну України?",
+    "amount": "64,000",
     "answers": [
       { "text": "Михайло Вербицький", "correct": true },
       { "text": "Микола Лисенко", "correct": false },
@@ -82,6 +90,7 @@
   {
     "id": 9,
     "question": "Яке море омиває південний берег України?",
+    "amount": "125,000",
     "answers": [
       { "text": "Червоне", "correct": false },
       { "text": "Азовське", "correct": false },
@@ -92,6 +101,7 @@
   {
     "id": 10,
     "question": "Яке число є квадратом числа 12?",
+    "amount": "250,000",
     "answers": [
       { "text": "144", "correct": true },
       { "text": "124", "correct": false },
@@ -102,6 +112,7 @@
   {
     "id": 11,
     "question": "Який рік вважається початком незалежності України?",
+    "amount": "500,000",
     "answers": [
       { "text": "1990", "correct": false },
       { "text": "1991", "correct": true },
@@ -112,6 +123,7 @@
   {
     "id": 12,
     "question": "Яка тварина є символом WWF (Всесвітнього фонду природи)?",
+    "amount": "1,000,000",
     "answers": [
       { "text": "Тигр", "correct": false },
       { "text": "Панда", "correct": true },
