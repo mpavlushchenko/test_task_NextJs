@@ -1,4 +1,4 @@
-import StartScreen from '@features/start/StartScreen';
+import StartScreen from '@features/millionaire-game/components/StartScreen';
 
 const StartPage = () => <StartScreen />;
 

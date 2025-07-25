@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import clsx from 'clsx';
 
-import GameOver from '@features/finish/GameOver';
-import { Answer, Question } from '@features/game/types';
+import { Answer, Question } from '@features/millionaire-game/types';
 import { delay } from '@/utils';
 
+import GameOver from './components/GameOver';
 import styles from './GameScreen.module.css';
 
 type GameState = {

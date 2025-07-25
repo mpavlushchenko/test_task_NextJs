@@ -9,7 +9,7 @@ const StartScreen = () => {
   const router = useRouter();
 
   const handleStart = () => {
-    router.push(ROUTES.GAME);
+    router.push(ROUTES.MILLIONAIRE_GAME);
   };
 
   return (

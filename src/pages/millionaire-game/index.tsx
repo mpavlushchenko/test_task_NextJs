@@ -1,8 +1,8 @@
 import { GetStaticProps } from 'next';
 import { promises as fs } from 'fs';
 
-import GameScreen from '@features/game/GameScreen';
-import { Question } from '@features/game/types';
+import GameScreen from '@features/millionaire-game/GameScreen';
+import { Question } from '@features/millionaire-game/types';
 
 type Props = {
   questions: Question[];
