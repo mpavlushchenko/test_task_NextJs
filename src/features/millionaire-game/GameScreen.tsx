@@ -28,47 +28,45 @@ const GameScreen = ({ questions }: { questions: Question[] }) => {
 
   const handleAnswerClick = async (answer: Answer) => {
     const { selectedAnswer, gameOver, questionIndex } = gameState;
-
     if (selectedAnswer || gameOver) return;
 
-    setGameState((prev) => ({
-      ...prev,
-      selectedAnswer: answer,
-    }));
-
-    await delay(1500);
-
-    const isAnswerCorrect = answer.correct;
-
-    setGameState((prev) => ({
-      ...prev,
-      answerStatus: isAnswerCorrect ? 'correct' : 'wrong',
-    }));
-
-    await delay(2000);
-
-    if (isAnswerCorrect) {
-      const isLast = questionIndex + 1 >= questions.length;
-      setGameState((prev) => ({
-        questionIndex: prev.questionIndex + 1,
-        selectedAnswer: null,
-        answerStatus: null,
-        gameOver: isLast,
-      }));
-    } else {
+    try {
       setGameState((prev) => ({
         ...prev,
-        gameOver: true,
+        selectedAnswer: answer,
       }));
+
+      await delay(1500);
+
+      const isAnswerCorrect = answer.correct;
+
+      setGameState((prev) => ({
+        ...prev,
+        answerStatus: isAnswerCorrect ? 'correct' : 'wrong',
+      }));
+
+      await delay(2000);
+
+      if (isAnswerCorrect) {
+        const isLast = questionIndex + 1 >= questions.length;
+        setGameState((prev) => ({
+          questionIndex: prev.questionIndex + 1,
+          selectedAnswer: null,
+          answerStatus: null,
+          gameOver: isLast,
+        }));
+      } else {
+        setGameState((prev) => ({
+          ...prev,
+          gameOver: true,
+        }));
+      }
+    } catch (e) {
+      console.error('Помилка під час обробки відповіді:', e);
     }
   };
 
-  const amountsReversed = questions
-    .map((q) => ({
-      id: q.id,
-      amount: q.amount,
-    }))
-    .reverse();
+  const amountsReversed = questions.map((q) => ({ id: q.id, amount: q.amount })).reverse();
 
   if (gameState.gameOver) {
     const earnedAmount = questions[gameState.questionIndex - 1]?.amount || '0';

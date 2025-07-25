@@ -1,29 +1,29 @@
 [
   {
     "id": 1,
-    "question": "Яке місто є столицею України?",
+    "question": "What city is the capital of Ukraine?",
     "amount": "500",
     "answers": [
-      { "text": "Львів", "correct": false },
-      { "text": "Київ", "correct": true },
-      { "text": "Харків", "correct": false },
-      { "text": "Одеса", "correct": false }
+      { "text": "Lviv", "correct": false },
+      { "text": "Kyiv", "correct": true },
+      { "text": "Kharkiv", "correct": false },
+      { "text": "Odesa", "correct": false }
     ]
   },
   {
     "id": 2,
-    "question": "Яка річка є найдовшою в Україні?",
+    "question": "What is the longest river in Ukraine?",
     "amount": "1,000",
     "answers": [
-      { "text": "Південний Буг", "correct": false },
-      { "text": "Дністер", "correct": false },
-      { "text": "Дніпро", "correct": true },
-      { "text": "Тиса", "correct": false }
+      { "text": "Southern Bug", "correct": false },
+      { "text": "Dnister", "correct": false },
+      { "text": "Dnipro", "correct": true },
+      { "text": "Tysa", "correct": false }
     ]
   },
   {
     "id": 3,
-    "question": "Скільки континентів існує на Землі?",
+    "question": "How many continents are there on Earth?",
     "amount": "2,000",
     "answers": [
       { "text": "5", "correct": false },
@@ -34,73 +34,73 @@
   },
   {
     "id": 4,
-    "question": "Хто написав 'Кобзар'?",
+    "question": "Who wrote 'Kobzar'?",
     "amount": "4,000",
     "answers": [
-      { "text": "Іван Франко", "correct": false },
-      { "text": "Леся Українка", "correct": false },
-      { "text": "Тарас Шевченко", "correct": true },
-      { "text": "Пантелеймон Куліш", "correct": false }
+      { "text": "Ivan Franko", "correct": false },
+      { "text": "Lesya Ukrainka", "correct": false },
+      { "text": "Taras Shevchenko", "correct": true },
+      { "text": "Panteleimon Kulish", "correct": false }
     ]
   },
   {
     "id": 5,
-    "question": "Яка планета найбільша в Сонячній системі?",
+    "question": "Which planet is the largest in the Solar System?",
     "amount": "8,000",
     "answers": [
-      { "text": "Земля", "correct": false },
-      { "text": "Юпітер", "correct": true },
-      { "text": "Сатурн", "correct": false },
-      { "text": "Марс", "correct": false }
+      { "text": "Earth", "correct": false },
+      { "text": "Jupiter", "correct": true },
+      { "text": "Saturn", "correct": false },
+      { "text": "Mars", "correct": false }
     ]
   },
   {
     "id": 6,
-    "question": "Скільки триває доба на Землі?",
+    "question": "How long is one day on Earth?",
     "amount": "16,000",
     "answers": [
-      { "text": "12 годин", "correct": false },
-      { "text": "24 години", "correct": true },
-      { "text": "48 годин", "correct": false },
-      { "text": "36 годин", "correct": false }
+      { "text": "12 hours", "correct": false },
+      { "text": "24 hours", "correct": true },
+      { "text": "48 hours", "correct": false },
+      { "text": "36 hours", "correct": false }
     ]
   },
   {
     "id": 7,
-    "question": "Який хімічний елемент має символ 'O'?",
+    "question": "Which chemical element has the symbol 'O'?",
     "amount": "32,000",
     "answers": [
-      { "text": "Олово", "correct": false },
-      { "text": "Кисень", "correct": true },
-      { "text": "Золото", "correct": false },
-      { "text": "Срібло", "correct": false }
+      { "text": "Tin", "correct": false },
+      { "text": "Oxygen", "correct": true },
+      { "text": "Gold", "correct": false },
+      { "text": "Silver", "correct": false }
     ]
   },
   {
     "id": 8,
-    "question": "Хто написав музику до гімну України?",
+    "question": "Who composed the music for the Ukrainian national anthem?",
     "amount": "64,000",
     "answers": [
-      { "text": "Михайло Вербицький", "correct": true },
-      { "text": "Микола Лисенко", "correct": false },
-      { "text": "Павло Чубинський", "correct": false },
-      { "text": "Станіслав Людкевич", "correct": false }
+      { "text": "Mykhailo Verbytsky", "correct": true },
+      { "text": "Mykola Lysenko", "correct": false },
+      { "text": "Pavlo Chubynsky", "correct": false },
+      { "text": "Stanislav Liudkevych", "correct": false }
     ]
   },
   {
     "id": 9,
-    "question": "Яке море омиває південний берег України?",
+    "question": "Which sea borders the southern coast of Ukraine?",
     "amount": "125,000",
     "answers": [
-      { "text": "Червоне", "correct": false },
-      { "text": "Азовське", "correct": false },
-      { "text": "Каспійське", "correct": false },
-      { "text": "Чорне", "correct": true }
+      { "text": "Red Sea", "correct": false },
+      { "text": "Azov Sea", "correct": false },
+      { "text": "Caspian Sea", "correct": false },
+      { "text": "Black Sea", "correct": true }
     ]
   },
   {
     "id": 10,
-    "question": "Яке число є квадратом числа 12?",
+    "question": "What number is the square of 12?",
     "amount": "250,000",
     "answers": [
       { "text": "144", "correct": true },
@@ -111,7 +111,7 @@
   },
   {
     "id": 11,
-    "question": "Який рік вважається початком незалежності України?",
+    "question": "Which year marks the beginning of Ukraine's independence?",
     "amount": "500,000",
     "answers": [
       { "text": "1990", "correct": false },
@@ -122,13 +122,13 @@
   },
   {
     "id": 12,
-    "question": "Яка тварина є символом WWF (Всесвітнього фонду природи)?",
+    "question": "Which animal is the symbol of WWF (World Wide Fund for Nature)?",
     "amount": "1,000,000",
     "answers": [
-      { "text": "Тигр", "correct": false },
-      { "text": "Панда", "correct": true },
-      { "text": "Лев", "correct": false },
-      { "text": "Слон", "correct": false }
+      { "text": "Tiger", "correct": false },
+      { "text": "Panda", "correct": true },
+      { "text": "Lion", "correct": false },
+      { "text": "Elephant", "correct": false }
     ]
   }
 ]
