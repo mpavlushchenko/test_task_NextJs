@@ -29,7 +29,7 @@ const GameScreen = () => {
     await delay(1500);
     setAnswerStatus(answer.correct ? 'correct' : 'wrong');
 
-    await delay(1000);
+    await delay(2000);
 
     if (answer.correct) {
       if (questionIndex + 1 < questions.length) {
