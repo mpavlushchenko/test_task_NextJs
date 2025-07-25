@@ -83,3 +83,20 @@
   background: var(--color-black-5);
   color: #555;
 }
+
+.answer {
+  color: var(--color-black-100);
+  transition: background-color 0.3s ease;
+}
+
+.selected {
+  background-color: var(--color-orange-5);
+}
+
+.correct {
+  background-color: var(--color-green-5);
+}
+
+.wrong {
+  background-color: var(--color-red-5);
+}

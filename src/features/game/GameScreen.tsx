@@ -1,10 +1,9 @@
 import { useState } from 'react';
 import clsx from 'clsx';
-import { useRouter } from 'next/router';
 
 import { winnings } from '@data/winnings';
 import { questions } from '@data/questions';
-
+import GameOver from '@features/finish/GameOver';
 import styles from './GameScreen.module.css';
 
 export type Answer = {
@@ -12,35 +11,52 @@ export type Answer = {
   correct: boolean;
 };
 
-const GameScreen = () => {
-  const router = useRouter();
+const delay = (ms: number) => new Promise((res) => setTimeout(res, ms));
 
+const GameScreen = () => {
   const [questionIndex, setQuestionIndex] = useState(0);
-  const [selected, setSelected] = useState<string | null>(null);
-  const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
+  const [selectedAnswer, setSelectedAnswer] = useState<Answer | null>(null);
+  const [answerStatus, setAnswerStatus] = useState<'correct' | 'wrong' | null>(null);
+  const [gameOver, setGameOver] = useState(false);
 
   const currentQuestion = questions[questionIndex];
 
-  const handleAnswer = (answer: Answer) => {
-    const { text, correct } = answer;
-    if (selected) return;
-    setSelected(text);
-    setIsCorrect(correct);
+  const handleAnswerClick = async (answer: Answer) => {
+    if (selectedAnswer || gameOver) return;
 
-    setTimeout(() => {
-      if (correct) {
-        if (questionIndex + 1 < questions.length) {
-          setQuestionIndex((prev) => prev + 1);
-          setSelected(null);
-          setIsCorrect(null);
-        } else {
-          router.push('/win');
-        }
+    setSelectedAnswer(answer);
+
+    await delay(1500);
+    setAnswerStatus(answer.correct ? 'correct' : 'wrong');
+
+    await delay(1000);
+
+    if (answer.correct) {
+      if (questionIndex + 1 < questions.length) {
+        setQuestionIndex((i) => i + 1);
+        setSelectedAnswer(null);
+        setAnswerStatus(null);
       } else {
-        router.push('/lose');
+        setGameOver(true);
       }
-    }, 1500);
+    } else {
+      setGameOver(true);
+    }
   };
+
+  const handleRestart = () => {
+    setQuestionIndex(0);
+    setSelectedAnswer(null);
+    setAnswerStatus(null);
+    setGameOver(false);
+  };
+
+  if (gameOver) {
+    const winningsIndex = winnings.length - 1 - questionIndex;
+    const earnedAmount = winnings[winningsIndex]?.amount || '0';
+
+    return <GameOver earnedAmount={earnedAmount} handleRestart={handleRestart} />;
+  }
 
   return (
     <div className={styles.container}>
@@ -49,19 +65,24 @@ const GameScreen = () => {
           <h2>{currentQuestion.question}</h2>
         </header>
         <section className={styles.answers}>
-          {currentQuestion.answers.map((answer) => (
-            <button
-              key={answer.text}
-              type="button"
-              onClick={() => handleAnswer(answer)}
-              className={clsx(
-                styles.answerButton,
-                selected === answer.text && (isCorrect ? styles.correct : styles.wrong),
-              )}
-            >
-              {answer.text}
-            </button>
-          ))}
+          {currentQuestion.answers.map((answer) => {
+            const isSelected = selectedAnswer?.text === answer.text;
+            return (
+              <button
+                key={answer.text}
+                type="button"
+                className={clsx(styles.answer, {
+                  [styles.selected]: isSelected,
+                  [styles.correct]: isSelected && answerStatus === 'correct',
+                  [styles.wrong]: isSelected && answerStatus === 'wrong',
+                })}
+                onClick={() => handleAnswerClick(answer)}
+                disabled={!!selectedAnswer}
+              >
+                {answer.text}
+              </button>
+            );
+          })}
         </section>
       </div>
 
@@ -75,7 +96,10 @@ const GameScreen = () => {
             return (
               <li
                 key={item.id}
-                className={`${styles.winningItem} ${isActive ? styles.active : isPassed ? styles.passed : ''}`}
+                className={clsx(styles.winningItem, {
+                  [styles.active]: isActive,
+                  [styles.passed]: isPassed,
+                })}
               >
                 {item.amount}
               </li>
