@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 import { Button } from '@components/ui/Button';
 import { ROUTES } from '@/constants';
-import styles from './StartScreen.module.css';
+import SplitScreenLayout from '@components/SplitScreenLayout/SplitScreenLayout';
 
 const StartScreen = () => {
   const router = useRouter();
@@ -13,19 +13,19 @@ const StartScreen = () => {
   };
 
   return (
-    <section className={styles.container}>
-      <div className={styles.leftBlock}>
-        <Image src="/hand.png" alt="Millionaire" fill priority />
-      </div>
-      <div className={styles.rightBlock}>
-        <h1 className={styles.title}>
+    <SplitScreenLayout
+      image={<Image src="/hand.png" alt="Millionaire" fill priority />}
+      subtitle={
+        <>
           Who wants to be <br /> a millionaire?
-        </h1>
+        </>
+      }
+      button={
         <Button type="button" onClick={handleStart} aria-label="Start the game">
           Start
         </Button>
-      </div>
-    </section>
+      }
+    />
   );
 };
 
