@@ -72,8 +72,7 @@ const GameScreen = ({ questions }: { questions: Question[] }) => {
     .reverse();
 
   if (gameState.gameOver) {
-    const indexFromTop = amountsReversed.length - gameState.questionIndex;
-    const earnedAmount = amountsReversed[indexFromTop]?.amount || '0';
+    const earnedAmount = questions[gameState.questionIndex - 1]?.amount || '0';
 
     return <GameOver earnedAmount={earnedAmount} handleRestart={() => setGameState(initialGameState)} />;
   }
