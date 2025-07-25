@@ -2,15 +2,11 @@ import { useState } from 'react';
 import clsx from 'clsx';
 
 import { winnings } from '@data/winnings';
-import { questions } from '@data/questions';
 import GameOver from '@features/finish/GameOver';
+import { Answer, Question } from '@features/game/types';
 
 import styles from './GameScreen.module.css';
 
-type Answer = {
-  text: string;
-  correct: boolean;
-};
 type GameState = {
   questionIndex: number;
   selectedAnswer: Answer | null;
@@ -27,7 +23,7 @@ const initialGameState: GameState = {
   gameOver: false,
 };
 
-const GameScreen = () => {
+const GameScreen = ({ questions }: { questions: Question[] }) => {
   const [gameState, setGameState] = useState(initialGameState);
 
   const currentQuestion = questions.at(gameState.questionIndex);
@@ -70,7 +66,6 @@ const GameScreen = () => {
   };
 
   if (gameState.gameOver) {
-    // TODO: check earnedAmount one more time
     const indexFromTop = winnings.length - gameState.questionIndex;
     const earnedAmount = winnings[indexFromTop]?.amount || '0';
 

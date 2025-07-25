@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "question": "Яке місто є столицею України?",
+    "answers": [
+      { "text": "Львів", "correct": false },
+      { "text": "Київ", "correct": true },
+      { "text": "Харків", "correct": false },
+      { "text": "Одеса", "correct": false }
+    ]
+  },
+  {
+    "id": 2,
+    "question": "Яка річка є найдовшою в Україні?",
+    "answers": [
+      { "text": "Південний Буг", "correct": false },
+      { "text": "Дністер", "correct": false },
+      { "text": "Дніпро", "correct": true },
+      { "text": "Тиса", "correct": false }
+    ]
+  },
+  {
+    "id": 3,
+    "question": "Скільки континентів існує на Землі?",
+    "answers": [
+      { "text": "5", "correct": false },
+      { "text": "6", "correct": false },
+      { "text": "7", "correct": true },
+      { "text": "8", "correct": false }
+    ]
+  },
+  {
+    "id": 4,
+    "question": "Хто написав 'Кобзар'?",
+    "answers": [
+      { "text": "Іван Франко", "correct": false },
+      { "text": "Леся Українка", "correct": false },
+      { "text": "Тарас Шевченко", "correct": true },
+      { "text": "Пантелеймон Куліш", "correct": false }
+    ]
+  },
+  {
+    "id": 5,
+    "question": "Яка планета найбільша в Сонячній системі?",
+    "answers": [
+      { "text": "Земля", "correct": false },
+      { "text": "Юпітер", "correct": true },
+      { "text": "Сатурн", "correct": false },
+      { "text": "Марс", "correct": false }
+    ]
+  },
+  {
+    "id": 6,
+    "question": "Скільки триває доба на Землі?",
+    "answers": [
+      { "text": "12 годин", "correct": false },
+      { "text": "24 години", "correct": true },
+      { "text": "48 годин", "correct": false },
+      { "text": "36 годин", "correct": false }
+    ]
+  },
+  {
+    "id": 7,
+    "question": "Який хімічний елемент має символ 'O'?",
+    "answers": [
+      { "text": "Олово", "correct": false },
+      { "text": "Кисень", "correct": true },
+      { "text": "Золото", "correct": false },
+      { "text": "Срібло", "correct": false }
+    ]
+  },
+  {
+    "id": 8,
+    "question": "Хто написав музику до гімну України?",
+    "answers": [
+      { "text": "Михайло Вербицький", "correct": true },
+      { "text": "Микола Лисенко", "correct": false },
+      { "text": "Павло Чубинський", "correct": false },
+      { "text": "Станіслав Людкевич", "correct": false }
+    ]
+  },
+  {
+    "id": 9,
+    "question": "Яке море омиває південний берег України?",
+    "answers": [
+      { "text": "Червоне", "correct": false },
+      { "text": "Азовське", "correct": false },
+      { "text": "Каспійське", "correct": false },
+      { "text": "Чорне", "correct": true }
+    ]
+  },
+  {
+    "id": 10,
+    "question": "Яке число є квадратом числа 12?",
+    "answers": [
+      { "text": "144", "correct": true },
+      { "text": "124", "correct": false },
+      { "text": "112", "correct": false },
+      { "text": "121", "correct": false }
+    ]
+  },
+  {
+    "id": 11,
+    "question": "Який рік вважається початком незалежності України?",
+    "answers": [
+      { "text": "1990", "correct": false },
+      { "text": "1991", "correct": true },
+      { "text": "1992", "correct": false },
+      { "text": "1989", "correct": false }
+    ]
+  },
+  {
+    "id": 12,
+    "question": "Яка тварина є символом WWF (Всесвітнього фонду природи)?",
+    "answers": [
+      { "text": "Тигр", "correct": false },
+      { "text": "Панда", "correct": true },
+      { "text": "Лев", "correct": false },
+      { "text": "Слон", "correct": false }
+    ]
+  }
+]

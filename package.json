@@ -20,6 +20,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "biome": "^0.2.2",
+    "fs": "^0.0.1-security",
     "typescript": "^5"
   }
 }
