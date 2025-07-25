@@ -3,6 +3,7 @@ import clsx from 'clsx';
 
 import GameOver from '@features/finish/GameOver';
 import { Answer, Question } from '@features/game/types';
+import { delay } from '@/utils';
 
 import styles from './GameScreen.module.css';
 
@@ -12,8 +13,6 @@ type GameState = {
   answerStatus: 'correct' | 'wrong' | null;
   gameOver: boolean;
 };
-
-const delay = (ms: number) => new Promise((res) => setTimeout(res, ms));
 
 const initialGameState: GameState = {
   questionIndex: 0,

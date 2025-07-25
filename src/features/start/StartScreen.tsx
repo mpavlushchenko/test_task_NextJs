@@ -2,8 +2,8 @@ import { useRouter } from 'next/router';
 import Image from 'next/image';
 
 import { Button } from '@components/ui/Button';
-import { ROUTES } from '@/constants';
 import SplitScreenLayout from '@components/SplitScreenLayout/SplitScreenLayout';
+import { ROUTES } from '@/constants';
 
 const StartScreen = () => {
   const router = useRouter();
