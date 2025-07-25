@@ -4,6 +4,7 @@ import clsx from 'clsx';
 import { winnings } from '@data/winnings';
 import { questions } from '@data/questions';
 import GameOver from '@features/finish/GameOver';
+
 import styles from './GameScreen.module.css';
 
 export type Answer = {
@@ -64,6 +65,7 @@ const GameScreen = () => {
         <header className={styles.question}>
           <h2>{currentQuestion.question}</h2>
         </header>
+
         <section className={styles.answers}>
           {currentQuestion.answers.map((answer) => {
             const isSelected = selectedAnswer?.text === answer.text;

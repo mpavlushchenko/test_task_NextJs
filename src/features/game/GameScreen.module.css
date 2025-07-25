@@ -8,45 +8,34 @@
   justify-content: space-between;
   flex: 1;
   gap: 4rem;
-  padding: 4rem;
+  padding: 4rem 12rem 4rem 4rem;
   background: var(--color-black-5);
 }
 .question {
-  flex-shrink: 0;
   height: 50%;
+  margin-top: 2rem;
 }
-.question h2 {
-  font-size: 1.8rem;
-  margin: 0;
-}
+
 .answers {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
   height: 50%;
 }
-.answerButton {
-  padding: 1rem;
-  font-size: 1rem;
-  border: 2px solid transparent;
-  border-radius: 8px;
-  background-color: #f0f0f0;
-  transition: 0.3s;
+.answer {
+  color: var(--color-black-100);
+  transition: background-color 0.3s ease;
 }
-.answerButton:hover {
-  cursor: pointer;
-  background-color: #ddd;
+.answer.selected {
+  background-color: var(--color-orange-5);
 }
-
-.correct {
-  background-color: #4caf50;
-  color: white;
+.answer.correct {
+  background-color: var(--color-green-5);
+}
+.answer.wrong {
+  background-color: var(--color-red-5);
 }
 
-.wrong {
-  background-color: #f44336;
-  color: white;
-}
 .sidebar {
   display: flex;
   justify-content: center;
@@ -57,6 +46,7 @@
   list-style: none;
   padding: 0;
   margin: 0;
+  width: 100%;
 }
 .sidebar .winningsList .winningItem {
   padding: 0.5rem 1rem;
@@ -64,39 +54,12 @@
   text-align: center;
 }
 
-.winningsList {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  width: 100%;
-}
-.winningItem {
-  padding: 0.5rem;
-  border-bottom: 1px solid #ccc;
-  text-align: right;
-}
-.active {
-  background-color: orange;
+.winningItem.active {
   font-weight: bold;
+  color: var(--color-orange-100);
+  background: var(--color-orange-5);
 }
-.passed {
+.winningItem.passed {
   background: var(--color-black-5);
   color: #555;
-}
-
-.answer {
-  color: var(--color-black-100);
-  transition: background-color 0.3s ease;
-}
-
-.selected {
-  background-color: var(--color-orange-5);
-}
-
-.correct {
-  background-color: var(--color-green-5);
-}
-
-.wrong {
-  background-color: var(--color-red-5);
 }
