@@ -8,7 +8,7 @@ const GameOver = ({ earnedAmount, handleRestart }: { earnedAmount: string; handl
     <SplitScreenLayout
       image={<Image src="/hand.png" alt="Millionaire" fill priority />}
       title="Total score:"
-      subtitle={`${earnedAmount} earned`}
+      subtitle={`$${earnedAmount} earned`}
       button={
         <Button type="button" onClick={handleRestart}>
           Try again

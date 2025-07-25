@@ -7,7 +7,7 @@ import GameOver from '@features/finish/GameOver';
 
 import styles from './GameScreen.module.css';
 
-export type Answer = {
+type Answer = {
   text: string;
   correct: boolean;
 };
@@ -28,17 +28,13 @@ const initialGameState: GameState = {
 };
 
 const GameScreen = () => {
-  const [gameState, setGameState] = useState<GameState>({
-    questionIndex: 0,
-    selectedAnswer: null,
-    answerStatus: null,
-    gameOver: false,
-  });
+  const [gameState, setGameState] = useState(initialGameState);
 
   const currentQuestion = questions.at(gameState.questionIndex);
 
   const handleAnswerClick = async (answer: Answer) => {
     const { selectedAnswer, gameOver, questionIndex } = gameState;
+
     if (selectedAnswer || gameOver) return;
 
     setGameState((prev) => ({
@@ -48,16 +44,16 @@ const GameScreen = () => {
 
     await delay(1500);
 
-    const isCorrect = answer.correct;
+    const isAnswerCorrect = answer.correct;
 
     setGameState((prev) => ({
       ...prev,
-      answerStatus: isCorrect ? 'correct' : 'wrong',
+      answerStatus: isAnswerCorrect ? 'correct' : 'wrong',
     }));
 
     await delay(2000);
 
-    if (isCorrect) {
+    if (isAnswerCorrect) {
       const isLast = questionIndex + 1 >= questions.length;
       setGameState((prev) => ({
         questionIndex: prev.questionIndex + 1,
@@ -73,16 +69,12 @@ const GameScreen = () => {
     }
   };
 
-  const handleRestart = () => {
-    setGameState(initialGameState);
-  };
-
   if (gameState.gameOver) {
     // TODO: check earnedAmount one more time
-    const winningsIndex = winnings.length - 1 - gameState.questionIndex;
-    const earnedAmount = winnings[winningsIndex]?.amount || '0';
+    const indexFromTop = winnings.length - gameState.questionIndex;
+    const earnedAmount = winnings[indexFromTop]?.amount || '0';
 
-    return <GameOver earnedAmount={earnedAmount} handleRestart={handleRestart} />;
+    return <GameOver earnedAmount={earnedAmount} handleRestart={() => setGameState(initialGameState)} />;
   }
 
   return (
@@ -129,7 +121,7 @@ const GameScreen = () => {
                   [styles.passed]: isPassed,
                 })}
               >
-                {item.amount}
+                ${item.amount}
               </li>
             );
           })}
