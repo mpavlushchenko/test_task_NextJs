@@ -6,6 +6,7 @@ import { delay } from '@/utils';
 
 import GameOver from './components/GameOver';
 import styles from './GameScreen.module.css';
+import { RectangleItem } from '@components/RectangleItem/RectangleItem';
 
 type GameState = {
   questionIndex: number;
@@ -110,15 +111,9 @@ const GameScreen = ({ questions }: { questions: Question[] }) => {
             const isPassed = q.id < currentId;
 
             return (
-              <div
-                key={q.id}
-                className={clsx(styles.winningItem, {
-                  [styles.active]: isActive,
-                  [styles.passed]: isPassed,
-                })}
-              >
+              <RectangleItem key={q.id} isActive={isActive} isPassed={isPassed}>
                 ${q.amount}
-              </div>
+              </RectangleItem>
             );
           })}
         </div>
