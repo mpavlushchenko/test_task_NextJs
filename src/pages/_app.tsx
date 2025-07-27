@@ -1,6 +1,7 @@
 import type { AppProps } from 'next/app';
 import { Inter } from 'next/font/google';
 
+import { BurgerMenuProvider } from '@components/BurgerMenuContext';
 import '@/styles/globals.css';
 
 const inter = Inter({
@@ -12,7 +13,9 @@ const inter = Inter({
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <main className={inter.variable}>
-      <Component {...pageProps} />
+      <BurgerMenuProvider>
+        <Component {...pageProps} />
+      </BurgerMenuProvider>
     </main>
   );
 }

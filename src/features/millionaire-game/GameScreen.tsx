@@ -1,11 +1,14 @@
 import { useState } from 'react';
+import clsx from 'clsx';
 
 import { Answer, Question } from '@features/millionaire-game/types';
+import { RectangleItem } from '@components/RectangleItem/RectangleItem';
+import { BurgerButton } from '@components/BurgerButton/BurgerButton';
+import { useBurgerMenu } from '@components/BurgerMenuContext';
 import { delay } from '@/utils';
 
 import GameOver from './components/GameOver';
 import styles from './GameScreen.module.css';
-import { RectangleItem } from '@components/RectangleItem/RectangleItem';
 
 type GameState = {
   questionIndex: number;
@@ -23,7 +26,9 @@ const initialGameState: GameState = {
 
 const GameScreen = ({ questions }: { questions: Question[] }) => {
   const [gameState, setGameState] = useState(initialGameState);
+  const { isOpen: isBurgerMenuOpen } = useBurgerMenu();
 
+  console.log(isBurgerMenuOpen);
   const currentQuestion = questions.at(gameState.questionIndex);
   const amountsReversed = questions.map((q) => ({ id: q.id, amount: q.amount })).reverse();
 
@@ -74,6 +79,8 @@ const GameScreen = ({ questions }: { questions: Question[] }) => {
 
   return (
     <div className={styles.container}>
+      <BurgerButton />
+
       <div className={styles.content}>
         <header className={styles.question}>
           <h2>{currentQuestion.question}</h2>
@@ -100,7 +107,7 @@ const GameScreen = ({ questions }: { questions: Question[] }) => {
         </section>
       </div>
 
-      <aside className={styles.sidebar}>
+      <aside className={clsx(styles.sidebar, { [styles.mobileScreenActive]: isBurgerMenuOpen })}>
         <div className={styles.winningsList}>
           {amountsReversed.map((q) => {
             const currentId = questions[gameState.questionIndex]?.id;
