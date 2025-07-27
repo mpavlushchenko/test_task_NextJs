@@ -82,11 +82,11 @@ const GameScreen = ({ questions }: { questions: Question[] }) => {
 
       <div className={styles.content}>
         <header className={styles.question}>
-          <h2>{currentQuestion.question}</h2>
+          <h2>{currentQuestion?.question}</h2>
         </header>
 
         <section className={styles.answers}>
-          {currentQuestion.answers.map((answer) => {
+          {currentQuestion?.answers.map((answer) => {
             const isSelected = gameState.selectedAnswer?.text === answer.text;
 
             return (
