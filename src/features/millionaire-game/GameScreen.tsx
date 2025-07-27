@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import clsx from 'clsx';
 
 import { Answer, Question } from '@features/millionaire-game/types';
 import { delay } from '@/utils';
@@ -85,19 +84,17 @@ const GameScreen = ({ questions }: { questions: Question[] }) => {
             const isSelected = gameState.selectedAnswer?.text === answer.text;
 
             return (
-              <button
+              <RectangleItem
                 key={answer.text}
-                type="button"
-                className={clsx(styles.answer, {
-                  [styles.selected]: isSelected,
-                  [styles.correct]: isSelected && gameState.answerStatus === 'correct',
-                  [styles.wrong]: isSelected && gameState.answerStatus === 'wrong',
-                })}
+                size="lg"
+                isSelected={isSelected}
+                isCorrect={isSelected && gameState.answerStatus === 'correct'}
+                isWrong={isSelected && gameState.answerStatus === 'wrong'}
                 onClick={() => handleAnswerClick(answer)}
                 disabled={!!gameState.selectedAnswer}
               >
                 {answer.text}
-              </button>
+              </RectangleItem>
             );
           })}
         </section>

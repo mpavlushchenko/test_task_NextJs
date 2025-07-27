@@ -19,21 +19,8 @@
 .answers {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-  height: 50%;
-}
-.answer {
-  color: var(--color-black-100);
-  transition: background-color 0.3s ease;
-}
-.answer.selected {
-  background-color: var(--color-orange-5);
-}
-.answer.correct {
-  background-color: var(--color-green-5);
-}
-.answer.wrong {
-  background-color: var(--color-red-5);
+  height: auto;
+  gap: 2rem 0;
 }
 
 .sidebar {
