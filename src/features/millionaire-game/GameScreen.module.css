@@ -79,3 +79,21 @@
     display: flex;
   }
 }
+
+@media (max-width: 480px) {
+  .question {
+    text-align: center;
+  }
+  .item svg {
+    width: 288px;
+    height: 56px;
+  }
+  .label,
+  .marker {
+    font-size: 14px;
+  }
+  .sidebar svg {
+    width: 240px;
+    height: 32px;
+  }
+}

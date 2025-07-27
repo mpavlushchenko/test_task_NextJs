@@ -38,7 +38,6 @@
   font-weight: 400;
   text-align: center;
   color: var(--color-black-100);
-  padding: 1px;
   z-index: 10;
   transition: background-color 0.3s ease, color 0.3s ease;
   cursor: pointer;
@@ -98,4 +97,16 @@
 .wrong .item svg path {
   stroke: var(--color-red-100);
   fill: var(--color-red-5);
+}
+
+@media (max-width: 480px) {
+  .item svg {
+    width: 288px;
+    height: 56px;
+  }
+  .label,
+  .marker {
+    font-size: 14px;
+    font-weight: 400;
+  }
 }

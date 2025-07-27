@@ -50,3 +50,9 @@ h1 {
 h2 {
   font-size: 32px;
 }
+
+@media (max-width: 480px) {
+  h2 {
+    font-size: 18px;
+  }
+}
