@@ -1,6 +1,7 @@
 .container {
   display: flex;
-  height: 100vh;
+  width: 100%;
+  height: 100dvh;
 }
 .content {
   display: flex;
@@ -13,6 +14,7 @@
   background: var(--color-black-5);
 }
 .question {
+  width: 100%;
   height: 50%;
   margin-top: 2rem;
 }
@@ -60,6 +62,7 @@
   .question {
     display: flex;
     align-items: center;
+    justify-content: center;
   }
   .answers {
     width: 100%;
@@ -83,6 +86,7 @@
 @media (max-width: 480px) {
   .question {
     text-align: center;
+    margin-top: 0;
   }
   .item svg {
     width: 288px;

@@ -66,6 +66,9 @@
 }
 
 @media (max-width: 480px) {
+  .leftBlock {
+    margin-bottom: 0;
+  }
   .rightBlock button {
     min-width: 100%;
   }
