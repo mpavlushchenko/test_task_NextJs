@@ -86,18 +86,20 @@ const GameScreen = ({ questions }: { questions: Question[] }) => {
         </header>
 
         <section className={styles.answers}>
-          {currentQuestion?.answers.map((answer) => {
+          {currentQuestion?.answers.map((answer, index) => {
             const isSelected = gameState.selectedAnswer?.text === answer.text;
+            const markers = ['A', 'B', 'C', 'D', 'E'];
 
             return (
               <RectangleItem
                 key={answer.text}
                 size="lg"
+                marker={markers[index]}
                 isSelected={isSelected}
                 isCorrect={isSelected && gameState.answerStatus === 'correct'}
                 isWrong={isSelected && gameState.answerStatus === 'wrong'}
                 onClick={() => handleAnswerClick(answer)}
-                disabled={!!gameState.selectedAnswer}
+                disabled={!!gameState.selectedAnswer && !isSelected}
               >
                 {answer.text}
               </RectangleItem>

@@ -15,6 +15,7 @@
   height: 1px;
   z-index: 1;
   background-color: var(--color-black-40);
+  transition: background-color 0.3s ease;
 }
 
 .wrapper.active::after,
@@ -30,11 +31,6 @@
   background-color: var(--color-red-100);
 }
 
-.item svg {
-  transition: all;
-  animation-duration: .3ms;
-}
-
 .item {
   position: relative;
   display: flex;
@@ -43,9 +39,16 @@
   text-align: center;
   color: var(--color-black-100);
   padding: 1px;
-  transition: background-color 0.3s ease;
   z-index: 10;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  cursor: pointer;
 }
+
+.item svg {
+  display: block;
+  transition: stroke 0.3s ease, fill 0.3s ease;
+}
+
 .label {
   position: absolute;
   top: 50%;
@@ -53,18 +56,31 @@
   transform: translate(-50%, -50%);
   line-height: 1;
   font-weight: 300;
+  z-index: 2;
+}
+.marker {
+  position: absolute;
+  top: 50%;
+  left: 2rem;
+  transform: translate(0, -50%);
+  line-height: 1;
+  color: var(--color-orange-100);
+  font-weight: 500;
+  z-index: 2;
 }
 
 .disabled {
   pointer-events: none;
 }
 
+/* State styles */
 .active .item {
   color: var(--color-orange-100);
 }
 .active .item svg path {
   stroke: var(--color-orange-100);
 }
+
 .passed .item {
   color: var(--color-black-40);
 }
