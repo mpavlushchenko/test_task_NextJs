@@ -42,24 +42,29 @@
   align-items: center;
   width: 376px;
 }
-.sidebar .winningsList {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.winningsList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
   width: 100%;
 }
-.sidebar .winningsList .winningItem {
+.winningsList .winningItem {
+  width: 240px;
   padding: 0.5rem 1rem;
-  font-size: 1rem;
+  font-size: 20px;
   text-align: center;
+  font-weight: 400;
+  color: var(--color-black-100);
+  border: 1px solid var(--color-black-40);
+  border-radius: 1rem;
 }
 
-.winningItem.active {
-  font-weight: bold;
+.winningsList .winningItem.active {
   color: var(--color-orange-100);
-  background: var(--color-orange-5);
+  border-color: var(--color-orange-100);
 }
-.winningItem.passed {
-  background: var(--color-black-5);
-  color: #555;
+.winningsList .winningItem.passed {
+  color: var(--color-black-40);
+  border-color: var(--color-black-40);
 }

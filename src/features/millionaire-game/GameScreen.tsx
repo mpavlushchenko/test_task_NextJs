@@ -103,14 +103,14 @@ const GameScreen = ({ questions }: { questions: Question[] }) => {
       </div>
 
       <aside className={styles.sidebar}>
-        <ul className={styles.winningsList}>
+        <div className={styles.winningsList}>
           {amountsReversed.map((q) => {
             const currentId = questions[gameState.questionIndex]?.id;
             const isActive = q.id === currentId;
             const isPassed = q.id < currentId;
 
             return (
-              <li
+              <div
                 key={q.id}
                 className={clsx(styles.winningItem, {
                   [styles.active]: isActive,
@@ -118,10 +118,10 @@ const GameScreen = ({ questions }: { questions: Question[] }) => {
                 })}
               >
                 ${q.amount}
-              </li>
+              </div>
             );
           })}
-        </ul>
+        </div>
       </aside>
     </div>
   );
