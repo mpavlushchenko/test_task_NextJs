@@ -79,7 +79,9 @@ const GameScreen = ({ questions }: { questions: Question[] }) => {
   return (
     <div className={styles.container}>
       <div className={styles.content}>
-        <BurgerButton />
+        <div className={styles.mobileHeader}>
+          <BurgerButton />
+        </div>
         <header className={styles.question}>
           <h2>{currentQuestion?.question}</h2>
         </header>
