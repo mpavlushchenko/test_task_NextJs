@@ -28,7 +28,6 @@ const GameScreen = ({ questions }: { questions: Question[] }) => {
   const [gameState, setGameState] = useState(initialGameState);
   const { isOpen: isBurgerMenuOpen } = useBurgerMenu();
 
-  console.log(isBurgerMenuOpen);
   const currentQuestion = questions.at(gameState.questionIndex);
   const amountsReversed = questions.map((q) => ({ id: q.id, amount: q.amount })).reverse();
 
