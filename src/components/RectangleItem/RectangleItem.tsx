@@ -1,13 +1,14 @@
 import { ReactNode } from 'react';
-
-import styles from './RectangleItem.module.css';
 import clsx from 'clsx';
 
+import styles from './RectangleItem.module.css';
+
 type Size = 'md' | 'lg';
-type RectangleItemItemProps = {
-  className?: string;
-  onClick?: () => void;
+
+type RectangleItemProps = {
   children: ReactNode;
+  onClick?: () => void;
+  className?: string;
   size?: Size;
   disabled?: boolean;
   isActive?: boolean;
@@ -20,26 +21,26 @@ type RectangleItemItemProps = {
 export const RectangleItem = ({
   children,
   onClick,
-  disabled,
-  size = 'md',
   className,
+  size = 'md',
+  disabled,
   isActive,
   isPassed,
   isSelected,
   isCorrect,
   isWrong,
-}: RectangleItemItemProps) => {
+}: RectangleItemProps) => {
+  const stateClass = clsx({
+    [styles.active]: isActive,
+    [styles.passed]: isPassed,
+    [styles.selected]: isSelected,
+    [styles.correct]: isCorrect,
+    [styles.wrong]: isWrong,
+    [styles.disabled]: disabled,
+  });
+
   return (
-    <div
-      className={clsx(styles.wrapper, {
-        [styles.disabled]: disabled,
-        [styles.active]: isActive,
-        [styles.passed]: isPassed,
-        [styles.selected]: isSelected,
-        [styles.correct]: isCorrect,
-        [styles.wrong]: isWrong,
-      })}
-    >
+    <div className={clsx(styles.wrapper, stateClass)}>
       <div className={clsx(styles.item, styles[size], className)} onClick={() => onClick?.()}>
         <div className={styles.rectangle}>{children}</div>
       </div>
