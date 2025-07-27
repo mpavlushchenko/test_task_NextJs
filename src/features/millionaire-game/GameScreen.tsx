@@ -78,9 +78,8 @@ const GameScreen = ({ questions }: { questions: Question[] }) => {
 
   return (
     <div className={styles.container}>
-      <BurgerButton />
-
       <div className={styles.content}>
+        <BurgerButton />
         <header className={styles.question}>
           <h2>{currentQuestion?.question}</h2>
         </header>
