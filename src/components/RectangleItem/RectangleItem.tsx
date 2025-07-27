@@ -41,7 +41,7 @@ export const RectangleItem = ({
       })}
     >
       <div className={clsx(styles.item, styles[size], className)} onClick={() => onClick?.()}>
-        {children}
+        <div className={styles.rectangle}>{children}</div>
       </div>
     </div>
   );

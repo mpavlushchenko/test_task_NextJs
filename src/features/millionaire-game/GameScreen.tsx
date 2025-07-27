@@ -67,7 +67,7 @@ const GameScreen = ({ questions }: { questions: Question[] }) => {
         }));
       }
     } catch (e) {
-      console.error('Помилка під час обробки відповіді:', e);
+      console.error(e);
     }
   };
 
