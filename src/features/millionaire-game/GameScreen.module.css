@@ -82,8 +82,9 @@
   .sidebar {
     width: 100%;
     position: fixed;
+    align-items: flex-end;
     top: 0;
-    bottom: 0;
+    bottom: 2rem;
     left: 0;
     right: 0;
     display: none;
