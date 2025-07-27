@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 1.5rem;
+  padding: 0 1rem;
 }
 
 .wrapper::after {
@@ -49,7 +49,8 @@
   transition: stroke 0.3s ease, fill 0.3s ease;
 }
 
-.label {
+.label,
+.marker {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -59,14 +60,10 @@
   z-index: 2;
 }
 .marker {
-  position: absolute;
-  top: 50%;
   left: 2rem;
   transform: translate(0, -50%);
-  line-height: 1;
   color: var(--color-orange-100);
   font-weight: 500;
-  z-index: 2;
 }
 
 .disabled {
