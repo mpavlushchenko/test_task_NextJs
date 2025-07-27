@@ -41,17 +41,7 @@
   cursor: pointer;
   transition: background-color 0.3s ease;
   z-index: 10;
-  clip-path: polygon(16px 0%, calc(100% - 16px) 0%, 100% 50%, calc(100% - 16px) 100%, 16px 100%, 0% 50%);
-}
-
-.md {
-  width: 240px;
-  height: 40px;
-}
-
-.lg {
-  width: 390px;
-  height: 72px;
+  clip-path: polygon(20px 0%, calc(100% - 20px) 0%, 100% 50%, calc(100% - 20px) 100%, 20px 100%, 0% 50%);
 }
 
 .rectangle {
@@ -62,6 +52,16 @@
   width: 100%;
   height: 100%;
   clip-path: inherit;
+}
+
+.md {
+  width: 240px;
+  height: 40px;
+}
+
+.lg {
+  width: 390px;
+  height: 72px;
 }
 
 .disabled {
